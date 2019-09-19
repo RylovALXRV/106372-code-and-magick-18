@@ -1,12 +1,6 @@
 'use strict';
 
 var AMOUNT_WIZARDS = 4;
-
-var setupElement = document.querySelector('.setup');
-var setupSimilarElement = setupElement.querySelector('.setup-similar');
-var setupSimilarListElement = setupElement.querySelector('.setup-similar-list');
-var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
-
 var wizardParams = {
   FIRST_NAMES: ['Иван', 'Хуан Себастьян', ' Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'],
   LAST_NAMES: ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'],
@@ -14,6 +8,11 @@ var wizardParams = {
     'rgb(215, 210, 55)', 'rgb(0, 0, 0)'],
   EYES_COLORS: ['black', 'red', 'blue', 'yellow', 'green']
 };
+
+var setupElement = document.querySelector('.setup');
+var setupSimilarElement = setupElement.querySelector('.setup-similar');
+var setupSimilarListElement = setupElement.querySelector('.setup-similar-list');
+var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
 var getRandomElement = function (arr) {
   return arr[Math.floor(Math.random() * arr.length)];
