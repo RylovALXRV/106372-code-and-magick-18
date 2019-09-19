@@ -57,12 +57,17 @@ var renderWizards = function (wizards) {
     fragment.appendChild(renderWizard(wizard));
   });
 
-  setupSimilarElement.classList.remove('hidden');
   setupSimilarListElement.appendChild(fragment);
 };
 
 var wizards = generateWizards(AMOUNT_WIZARDS);
 
+var showSimilarWizards = function () {
+  renderWizards(wizards);
+
+  setupSimilarElement.classList.remove('hidden');
+};
+
 setupElement.classList.remove('hidden');
 
-renderWizards(wizards);
+showSimilarWizards();
