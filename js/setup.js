@@ -109,18 +109,24 @@ var setColorElement = function (target, feature, selector) {
   setupElement.querySelector(selector).value = target.style.fill;
 };
 
+var enterKeydownHandler = function (evt, callback) {
+  if (evt.keyCode === KeyCode.ENTER) {
+    callback();
+  }
+};
+
 var playerClickHandler = function (evt) {
   switch (evt.target) {
     case wizardCoatElement:
       setColorElement(evt.target, wizardParams.COAT_COLORS, 'input[name="coat-color"]');
-      return;
+      break;
     case wizardEyesElement:
       setColorElement(evt.target, wizardParams.EYES_COLORS, 'input[name="eyes-color"]');
-      return;
+      break;
     case wizardFireballElement:
       fireballInputElement.value = getRandomElement(wizardParams.FIREBALL_COLORS);
       evt.target.style.backgroundColor = fireballInputElement.value;
-      return;
+      break;
   }
 };
 
@@ -129,9 +135,7 @@ iconOpenElement.addEventListener('click', function () {
 });
 
 iconOpenElement.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === KeyCode.ENTER) {
-    openPopup();
-  }
+  enterKeydownHandler(evt, openPopup);
 });
 
 buttonCloseElement.addEventListener('click', function () {
@@ -139,9 +143,7 @@ buttonCloseElement.addEventListener('click', function () {
 });
 
 buttonCloseElement.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === KeyCode.ENTER) {
-    closePopup();
-  }
+  enterKeydownHandler(evt, closePopup);
 });
 
 document.querySelector('.setup-player').addEventListener('click', playerClickHandler);
