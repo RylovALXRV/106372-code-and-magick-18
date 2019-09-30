@@ -8,9 +8,9 @@
 
   var setupElement = document.querySelector('.setup');
   var buttonCloseElement = setupElement.querySelector('.setup-close');
-  var iconOpenElement = document.querySelector('.setup-open-icon');
-  var userNameInputElement = setupElement.querySelector('.setup-user-name');
   var uploadElement = setupElement.querySelector('.upload');
+  var userNameInputElement = setupElement.querySelector('.setup-user-name');
+  var iconOpenElement = document.querySelector('.setup-open-icon');
 
   var resetSetupStyles = function () {
     setupElement.style.left = '';
